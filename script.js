@@ -34,10 +34,35 @@ function mergeSort(arr) {
   const arr1 = [9, 7, 6, 0, 1, 3]
   const arr2 = [8, 4, 2, 7]
 
-  console.log(mergeSort(arr1))
+  console.log("mergeSort = " + mergeSort(arr1))
 
   
   function quickSort(arr){
     // YOUR CODE HERE
-  
+
+    // base case
+    if (arr.length <= 1) {
+        return arr
+    }
+
+    const pivot = arr[arr.length-1] // last element
+    const right = []
+    const left = []
+
+    // if right > pivot, move to right
+    for (let i = 0; i < arr.length-1; i++) {
+        if (arr[i] < pivot){
+            left.push(arr[i])
+        }
+        else {
+            right.push(arr[i])
+        }
+    }
+
+    return quickSort(left).concat(pivot, quickSort(right))
+
   }
+
+  const arr = [0, 9, 6, 5, 4]
+
+  console.log("quickSort = " + quickSort(arr))
