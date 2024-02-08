@@ -27,7 +27,6 @@ function mergeSort(arr) {
   }
 
   const arr1 = [9, 7, 6, 0, 1, 3]
-  const arr2 = [8, 4, 2, 7]
 
   console.log("mergeSort = " + mergeSort(arr1))
 
