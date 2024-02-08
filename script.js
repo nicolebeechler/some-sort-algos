@@ -1,22 +1,17 @@
 function mergeSort(arr) {
-    // YOUR CODE HERE
 
-    // array length < 1 base case
     if (arr.length <= 1) {
         return arr
     }
 
-    // middle, left, right
     const middle = Math.floor(arr.length / 2)
     const left = arr.slice(0, middle)
     const right = arr.slice(middle)
 
-    // return left and right merge
     return merge(mergeSort(left), mergeSort(right))
   }
   
   
-  // HELPER FUNCTION: merge two sorted arrays
   function merge(arr1, arr2) {
     var result = [];
   
@@ -38,18 +33,15 @@ function mergeSort(arr) {
 
   
   function quickSort(arr){
-    // YOUR CODE HERE
-
-    // base case
+    
     if (arr.length <= 1) {
         return arr
     }
 
-    const pivot = arr[arr.length-1] // last element
+    const pivot = arr[arr.length-1] 
     const right = []
     const left = []
 
-    // if right > pivot, move to right
     for (let i = 0; i < arr.length-1; i++) {
         if (arr[i] < pivot){
             left.push(arr[i])
